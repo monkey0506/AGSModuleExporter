@@ -1,0 +1,16 @@
+language: csharp
+solution: "./AGSModuleExporter.sln"
+
+install: nuget restore ./AGSModuleExporter.sln
+
+script: xbuild ./AGSModuleExporter.sln
+
+deploy:
+  provider: releases
+  api_key:
+    secure: fAsj8bbsmkU0ddxpj0O/HrLqd8A3xoVMfz10T9VOAzU8o486V4DEDPza2uejwXrvzBOa4YG2MG3+cU99elXDgKpLRixQFjb2M60eHepqSqtf0ZRKyFVYdMthvqZLy+iPIHFsGQQ6qeytGpdOb7oneQQb9Sov/iG6+O1HKLefHKZVGVmf9OB32CMHUJpcdxbCKw1Y5gUV8Q4PDP5RTPRx7u/OyEyUt0NAdSRmbK3X+lmZSpF+vsDRuc2BM7Nt0w9Tg9PcBRL7UIHtVIaPRS+YdWlxxt69resItTW27dcN5gxeM8XtEzbGT+sdrIQgSUmv/gMugJ5jL09lmaPFjRbpytSEmTIw/jMKcTAYUQOXWAIHCZaOV5VhpA8Sn3LTJDnpt6HxevXPqVrQP10DBEyKnESSJ4ClahdOHFGEvpzQvn9xPyQ7sofDPjgQlt7+JBB3HR9qqccupl6XBwQI14/1SiVolJlHNvMnY5267FAiHRByiP21tKbre5xo3tj99Eh9WSiIZsXgTbSTclfQzJ3DJNb601OVU/ZH3al8MARs3I1let3KBt8nX7A7guYkmyJN3w+KfxU+CfvskZPF4P57HN5abF7RIJ7kZWiTqDWz1TngnRFxKx39LVUP1i6P7T2XNKBuvbS56i/INS71Eq8LUtZOaF0AVMgAJTE8arJu2fk=
+  file: "./bin/Debug/AGSModuleExporter.exe"
+  skip_cleanup: true
+  on:
+    repo: monkey0506/AGSModuleExporter
+    tags: true
